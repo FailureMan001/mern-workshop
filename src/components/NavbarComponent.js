@@ -1,0 +1,37 @@
+import {Link,withRouter} from "react-router-dom";
+import {getUsername, logout} from "../services/authorRize";
+
+
+const NavbarComponent=({history})=>{
+
+    return(
+        <nav>
+            <ul className="nav nav-tabs">
+                <li className="nav-item pr-3 pt-3 pb-3">
+                    <Link to="/" className="nav-link">Home</Link>
+                </li>
+                {getUsername() && (
+                    <li className="nav-item pr-3 pt-3 pb-3">
+                        <Link to="/create" className="nav-link">เขียนบทความ</Link>
+                    </li>
+                )}
+                { !getUsername() && (
+                    <li className="nav-item pr-3 pt-3 pb-3">
+                        <Link to="/login" className="nav-link">เข้าสู่ระบบ</Link>
+                    </li>
+                  )
+                }
+                { getUsername() && (
+                    <li className="nav-item pr-3 pt-3 pb-3">
+                        <button className="nav-link" onClick={()=>logout(()=>history.push("/"))}>ออกจากระบบ</button>
+                    </li>
+                  )
+                }
+                
+            </ul>
+        </nav>
+    )
+}
+
+
+export default withRouter(NavbarComponent);
