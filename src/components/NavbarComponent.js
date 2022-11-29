@@ -8,7 +8,7 @@ const NavbarComponent=({history})=>{
         <nav>
             <ul className="nav nav-tabs">
                 <li className="nav-item pr-3 pt-3 pb-3">
-                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/" className="nav-link btn btn-outline-primary">Home</Link>
                 </li>
                 {getUsername() && (
                     <li className="nav-item pr-3 pt-3 pb-3">
