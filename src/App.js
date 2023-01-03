@@ -26,14 +26,6 @@ function App() {
     fetchData()
   })
 
-  // // TODO: Function เปิดแท็บใหม่
-  // const newTap =(slug)=>{
-  //   window.open("/oneBlog/"+ slug)
-  // }
-  // const newTapEdit =(slug)=>{
-  //   window.open("/oneBlog/edit/"+ slug)
-  // }
-  
   // TODO: ฟังก์ชันลบบทความ
   const conFirmDelete=(slug)=>{
     Swal.fire({
